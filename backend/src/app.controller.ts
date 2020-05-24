@@ -25,7 +25,7 @@ export class AppController {
   ) {}
 
   @Get()
-  async bid(): Promise<object> {
+  async bid(): Promise<any> {
     const orderTransactionGUID = uuid.v4();
     // We are hard-coding values here
     // instead of collecting them from a request
