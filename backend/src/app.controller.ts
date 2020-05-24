@@ -23,6 +23,7 @@ export class AppController {
     private readonly eventBus: EventBus,
     private queryBus: QueryBus,
   ) {}
+
   @Get()
   async bid(): Promise<object> {
     const orderTransactionGUID = uuid.v4();

@@ -6,7 +6,12 @@ export class ItemModel extends AggregateRoot {
   constructor(private readonly item: IItemInterface) {
     super();
   }
-  orderOnItem(orderTransactionGUID: string, userID: string, amount: number) {
+
+  orderOnItem(
+    orderTransactionGUID: string,
+    userID: string,
+    amount: number,
+  ): void {
     // validation and etc.
     try {
       // business logic

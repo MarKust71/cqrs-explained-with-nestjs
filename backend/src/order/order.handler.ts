@@ -9,17 +9,20 @@ export class OrderHandler implements ICommandHandler<OrderCommand> {
     private readonly itemRepository: ItemRepository,
     private readonly publisher: EventPublisher,
   ) {}
-  async execute(command: OrderCommand) {
+
+  async execute(command: OrderCommand): Promise<void> {
     const {
       orderTransactionGUID,
       orderAmount,
       orderItem,
       orderUserGUID,
     } = command;
+
     // tslint:disable-next-line:no-console
     console.log(
       `Make a bid on ${orderItem}, with userID: ${orderUserGUID} amount: ${orderAmount}`,
     );
+
     // to associate model ( Order ) and publisher, we use code bellow
     const item = this.publisher.mergeObjectContext(
       await this.itemRepository.getItemById(orderItem),

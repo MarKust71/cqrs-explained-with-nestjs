@@ -4,7 +4,7 @@ import { ItemModel } from './item.model';
 
 @Injectable()
 export class ItemRepository {
-  async getItemById(id: string) {
+  async getItemById(id: string): Promise<ItemModel> {
     // fetch it from database for example
     const item: IItemInterface = {
       id,
@@ -12,7 +12,8 @@ export class ItemRepository {
     };
     return new ItemModel(item);
   }
-  async getAll() {
+
+  async getAll(): Promise<[]> {
     return [];
   }
 }
