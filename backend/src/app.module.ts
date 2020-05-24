@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+// import { AppService } from './app.service';
 
 //
 // [ExceptionHandler] Nest can't resolve dependencies of the AppController (?, QueryBus). Please make sure that the argument EventBus at index [0] is available in
